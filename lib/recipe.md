@@ -54,8 +54,10 @@ my_tasks_task_to_do_one_task("#TODO washing") => ["#TODO washing"]
 
 """
 Given two items in a list with '#TODO' in the string
-"""
+
 my_tasks_with_two_to_do_two_tasks("#TODO washing", "walking #TODO") => ["#TODO washing", "walking #TODO"]
+
+"""
 
 """
 Given a list that doesn't contain '#TODO' in the string
@@ -67,16 +69,18 @@ my_tasks_with_no_to_do_tasks("feed the cat", "make dinner", "go to sleep early")
 Given a list with a mix of '#TODO' tasks and ones which don't contain '#TODO'
 """
 my_tasks_with_to_do_and_not_to_do_tasks("#TODO washing","make dinner","walking #TODO") => ["#TODO washing","walking #TODO"]
-
 """
+
 Given a list where the task does not contain the exact string "#TO drive to mum DO123"
 
-my_tasks_with_not_the_exact_string("#TO drive to mum DO123","make dinner","#TODO washing")
+my_tasks_with_not_the_exact_string("#TO drive to mum DO123","make dinner","#TODO washing") ==> ["#TODO washing"]
 
 """
 
 """
 Given a list where the task contains '#TODO' as '#Todo'
+my_tasks_with_todo_not_in_the_correct_format("#TODO washing","#Todo walk the dog", "walking #TODO") ==> [#TODO washing", "walking #TODO"]
+
 
 """
 
