@@ -31,7 +31,10 @@ def test_my_tasks_with_to_do_and_not_to_do_tasks():
     task_list = (["#TODO washing","make dinner","walking #TODO"])
     assert my_tasks(task_list) == ["#TODO washing","walking #TODO"]
 
+def test_my_tasks_with_not_the_exact_string():
+    task_list = (["#TO drive to mum DO123","make dinner","#TODO washing"])
+    assert my_tasks(task_list) == ["#TODO washing"]
 
-
-
-
+def test_my_tasks_with_todo_not_in_the_correct_format():
+    task_list = (["#TODO washing","#Todo walk the dog", "walking #TODO"])
+    assert my_tasks(task_list) == ["#TODO washing", "walking #TODO"]
